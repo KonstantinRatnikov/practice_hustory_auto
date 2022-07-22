@@ -19,19 +19,72 @@ history = requests.post('https://xn--b1afk4ade.xn--90adear.xn--p1ai/proxy/check/
 
 OS сервера ubuntu-20.04.4-live-server
 
-Установка через Docker
+Установка через Docker,также работает на windows
 
-cd "путь к файлу"/docker_project
+Если Docker установлен, то
+
+Запуск контейнера
+
+cd "путь к файлу"/docker_project 
+
 sudo docker-compose up
 
+Инструкция на чистый сервер ubuntu-20.04.4
 
-Также можно установить 
+Установка Docker
+
+sudo apt update
+
+sudo dpkg --configure -a
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+sudo apt update
+
+apt-cache policy docker-ce
+
+sudo apt install docker-ce
+
+apt-cache policy docker-ce
+
+
+Установка Docker Compose
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+Запуск контейнера
+
+cd "путь к файлу"/docker_project 
+
+sudo docker-compose up
+
+Добавление домена
+
+В файле "C:\Windows\System32\drivers\etc\hosts" добавить 
+
+"ip сервера" localhost
+
+Открыть в браузере localhost/
+
+
+
+Также можно установить без Docker, вручную настроив сервер, у меня работало на apache, php, myqsl, python
 
 apache 2.4.41 ubuntu
 
 php 7.4.3
 
 myqsl 8.0.28
+
+python 3.8.10
 
 Далее создать домен и загрузить на него файлы из папки project
 
