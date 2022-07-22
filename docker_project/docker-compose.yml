@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  application:
+    build: app_php
+    ports:
+      - "80:80"
+    #restart: always
+    environment:
+      MSQ_HOST: mysql
+  mysql:
+    build: .
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "kostya.1100"
+      MYSQL_DATABASE: "practice"
+    volumes:
+      - ./test:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
