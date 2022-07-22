@@ -21,6 +21,9 @@ OS сервера ubuntu-20.04.4-live-server
 
 Установка через Docker
 
+cd "путь к файлу"/docker_project
+sudo docker-compose up
+
 
 Также можно установить 
 
